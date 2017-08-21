@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <siteHeader/>
+    <siteHeader transparent="true"/>
     <nuxt/>
   </div>
 </template>

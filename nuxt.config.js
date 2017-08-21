@@ -1,30 +1,31 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
-    title: 'starter',
+    title: 'PopCorns',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Rent movies online' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Global CSS
-  */
-  css: ['~/assets/css/main.css'],
-  /*
-  ** Add axios globally
-  */
+
+  css: ['@/assets/scss/bootstrap.scss'],
+
+  loading: { color: '#fff' },
+  modules: [
+    '@nuxtjs/apollo',
+    '@nuxtjs/font-awesome',
+    ['@nuxtjs/bootstrap-vue', { css: false }]
+  ],
+  apollo: {
+    networkInterfaces: {
+      default: '~/apollo/network-interfaces/default.js'
+    }
+  },
   build: {
-    vendor: ['axios'],
-    /*
-    ** Run ESLINT on save
-    */
+    vendor: [],
     extend (config, ctx) {
       if (ctx.isClient) {
         config.module.rules.push({

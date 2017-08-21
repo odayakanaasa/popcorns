@@ -1,7 +1,7 @@
 import express from 'express'
 import { Nuxt, Builder } from 'nuxt'
-import bodyParser from 'body-parser'
-import { graphqlExpress } from 'apollo-server-express'
+// import bodyParser from 'body-parser'
+// import { graphqlExpress } from 'apollo-server-express'
 
 const app = express()
 const host = process.env.HOST || '127.0.0.1'

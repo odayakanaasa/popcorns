@@ -1,48 +1,33 @@
 <template>
-  <section class="container">
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      USERS
-    </h1>
-    <ul class="users">
-      <li v-for="(user, index) in users" :key="index" class="user">
-        <nuxt-link :to="{ name: 'id', params: { id: index }}">
-          {{ user.name }}
-        </nuxt-link>
-      </li>
-    </ul>
+  <section class="page-front">
+    <b-jumbotron fluid>
+      <h1 class="jumbotron-title">
+        Explora nuestro catálogo de películas y renta la que quieras, cuando quieras
+      </h1>
+      <b-btn variant="primary" to="/" size="lg">Comienza ahora</b-btn>
+    </b-jumbotron>
+
   </section>
 </template>
 
 <script>
-import axios from '~/plugins/axios'
-
 export default {
-  async asyncData () {
-    let { data } = await axios.get('/api/users')
-    return { users: data }
-  },
-  head () {
-    return {
-      title: 'Users'
-    }
-  }
+  layout: 'landing'
 }
 </script>
 
-<style scoped>
-.title
-{
-  margin: 30px 0;
-}
-.users
-{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.user
-{
-  margin: 10px 0;
+<style lang="scss">
+.page-front {
+  .jumbotron-title {
+    font-size: 45px;
+    line-height: 65px;
+    margin-bottom: 35px;
+    padding-right: 20px;
+    color: #2c3e50;
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    margin-top: 4rem;
+  }
 }
 </style>
